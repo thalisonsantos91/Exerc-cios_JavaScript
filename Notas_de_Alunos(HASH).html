@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang=”pt-br”>
+<head>
+<meta charset=”UTF-8”>
+<link rel=”stylesheet” type=”text/css” href=”estilo.css”>
+<title>Exercício 21 dias</title>
+</head>
+<body>
+	<script>
+		 
+		alunos = [] 
+		valor_clientes = []
+		notas_alunos=[]
+		
+
+		quantidade_alunos = prompt("Quantos Alunos vc quer? ");
+		
+
+		for (aluno_index = 0; aluno_index < quantidade_alunos; aluno_index++) {
+
+			nome = prompt("Digite o NOME do aluno : " );
+			sexo= prompt("Diga o seu sexo \nM para Masculino ou \nF para Feminino : ")	
+			s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
+			mostrar_sexo = (s_sexo == "M" ? "do" : "da");
+			mostrar_OA = (s_sexo == "M" ? "O" : "A");
+			nota1 = Number(prompt("Digite a primeira NOTA de "  + nome ));
+			nota2 = Number(prompt("Digite a segunda NOTA de "  + nome ));
+			media_individual = (nota1+nota2)/quantidade_alunos
+
+			
+		aluno = {}
+
+		aluno.nome_aluno= nome;
+		aluno.nota_aluno= [nota1,nota2];
+		aluno.media_aluno= media_individual
+		aluno.mostrar_Sex=mostrar_sexo
+		aluno.mostrar_OAOA = mostrar_OA
+
+		alunos.push(aluno);		
+		 
+		 
+		}
+
+
+		media=0;
+		
+		media = (alunos[0].media_aluno + alunos[1].media_aluno)/2;	
+
+
+
+
+		if(media>=100){
+
+
+
+
+		debugger
+			document.write ( alunos[0].mostrar_OAOA  + "  "+ alunos[0].nome_aluno + " obteve as Notas " + 
+				alunos[0].nota_aluno[0] + " e " + alunos[0].nota_aluno[1] );
+
+			document.write ("<br> A média " + alunos[0].mostrar_Sex  + " "+ alunos[0].nome_aluno + " é: " + alunos[0].media_aluno );
+		 	document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br>" + alunos[1].mostrar_OAOA  + "  "+ alunos[1].nome_aluno + " obteve as Notas " + 
+				alunos[1].nota_aluno[0] + " e " + alunos[1].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[1].mostrar_Sex  + " "+ alunos[1].nome_aluno + " é: " + alunos[1].media_aluno );
+			document.write("<br> ___________________________________________________________________________________________________________")
+			document.write (" <br><br> O total de alunos foi:  " + quantidade_alunos);
+			document.write ("<br>A média geral foi  : " + media); 	
+		 	document.write ( "<br>Parábens, a média de vcs foi maior que 100!") 	
+	 	
+
+		 }else if(media<100 && media>50){
+
+		 	document.write ( alunos[0].mostrar_OAOA  + "  "+ alunos[0].nome_aluno + " obteve as Notas " + 
+				alunos[0].nota_aluno[0] + " e " + alunos[0].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[0].mostrar_Sex  + " "+ alunos[0].nome_aluno + " é: " + alunos[0].media_aluno );
+		 	document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br>" + alunos[1].mostrar_OAOA  + "  "+ alunos[1].nome_aluno + " obteve as Notas " + 
+				alunos[1].nota_aluno[0] + " e " + alunos[1].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[1].mostrar_Sex  + " "+ alunos[1].nome_aluno + " é: " + alunos[1].media_aluno );
+			document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br> O total de alunos foi:  " + quantidade_alunos);
+			document.write ("<br>A média geral foi  : " + media); 
+		 	document.write ("<br>Muito bem, estão na média!");
+
+		 }else if(media<50 && media>20){
+
+			document.write ( alunos[0].mostrar_OAOA  + "  "+ alunos[0].nome_aluno + " obteve as Notas " + 
+				alunos[0].nota_aluno[0] + " e " + alunos[0].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[0].mostrar_Sex  + "  "+ alunos[0].nome_aluno + " é: " + alunos[0].media_aluno );
+		 	document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br>" + alunos[1].mostrar_OAOA  + "  "+ alunos[1].nome_aluno + " obteve as Notas " + 
+				alunos[1].nota_aluno[0] + " e " + alunos[1].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[1].mostrar_Sex  + " "+ alunos[1].nome_aluno + " é: " + alunos[1].media_aluno );
+			document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br> O total de alunos foi:  " + quantidade_alunos);
+			document.write ("<br>A média geral foi  : " + media); 
+		 	document.write ("<br>Vcs precisam melhorar!")
+
+		 }else {
+
+			document.write ( alunos[0].mostrar_OAOA  + "  "+ alunos[0].nome_aluno + " obteve as Notas " + 
+				alunos[0].nota_aluno[0] + " e " + alunos[0].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[0].mostrar_Sex  + "  "+ alunos[0].nome_aluno + " é: " + alunos[0].media_aluno );
+		 	document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br>" + alunos[1].mostrar_OAOA  + " "+ alunos[1].nome_aluno + " obteve as Notas " + 
+				alunos[1].nota_aluno[0] + " e " + alunos[1].nota_aluno[1] );			
+			document.write ("<br> A média " + alunos[1].mostrar_Sex  + " "+ alunos[1].nome_aluno + " é: " + alunos[1].media_aluno );
+			document.write("<br> ___________________________________________________________________________________________________________")
+			document.write ("<br><br> O total de alunos foi:  " + quantidade_alunos);
+			document.write ("<br>A média geral foi  : " + media); 
+		 	document.write ( "Pessoal, tem certeza que é isso que vcs querem?")
+
+		 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+</body>
+</html>

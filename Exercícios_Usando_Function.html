@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang=”pt-br”>
+<head>
+<meta charset=”UTF-8”>
+<link rel=”stylesheet” type=”text/css” href=”estilo.css”>
+<title>Function</title>
+</head>
+<body>
+	<script>
+
+		//FAÇA UM PROGRAMA QUE PERGUNTE UMA OPÇÃO PARA O USUÁRIO.
+
+		//OPÇÃO 1 = MOSTRAR CALCULO DA TABUADA
+		//OPÇÃO 2 = MOSTRAR MÉDIA DOS ALUNOS
+		//OPÇÃO 3 = PARAR O PROGRAMA 
+
+
+		//O OBJETIVO É TER UM LOOP ONDE IRAR FICAR PERGUNTANDO PARA O USUÁRIO, 
+		//ATÉ ELE DIGITAR A OPÇÃO 3 E SAIR DO PROGRAMA.
+
+
+
+
+tabuada = function (inicio_numero_tabuada,fim_numero_tabuada,multiplicador){	
+
+
+		 	if(inicio_numero_tabuada>fim_numero_tabuada){
+
+		 		return
+		 	}
+
+			document.write(inicio_numero_tabuada + " x " + multiplicador + " = " + (inicio_numero_tabuada*multiplicador) + 
+				"<br>");
+		 	
+		 	tabuada(inicio_numero_tabuada+1, fim_numero_tabuada, multiplicador)	
+	}
+
+
+
+numero = Number(prompt("Digite a tabuada que vc quer:"))
+tabuada(1, 10, numero)
+
+
+
+function valorMedia(){
+			Qtd_alunos = Number(prompt("Quantos alunos serão?"))
+
+			notas = []
+			for(aluno_index=0; aluno_index < Qtd_alunos; aluno_index++)	 {		
+		 		nota = parseInt(prompt("Digite a NOTA do aluno " + (aluno_index+1)))			
+				
+		 		notas.push(nota);
+		 		}
+
+
+			somaTotal= notas.reduce((x,y) => x+y)
+			document.write("A media dos alunos foi " + (somaTotal) + "<br>");
+
+
+		 	}
+
+
+debugger
+
+
+
+menu = function(){
+
+	op = Number(prompt("Digite uma opção:" + "\n1. TABUADA"+ "\n2. MÉDIA" + "\n3.SAIR"));
+			
+
+	if(op==1){
+
+	alert (" Você digitou a tabuada")
+
+	valorTabuada();
+		
+
+	}else if(op==2){	
+	
+	alert (" Você a média")	
+	
+	valorMedia();
+
+	}else if(op ==3){
+
+	return	
+	
+	}else if(op != 3){
+
+	alert("vc digitou uma opção inválida!")
+	
+	}
+
+
+	menu()
+
+
+}
+
+menu()
+
+
+
+
+	</script>
+
+
+</body>
+</html>
